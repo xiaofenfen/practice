@@ -5,6 +5,9 @@
   <title>画布</title>
 </head>
 <body>
+  </body>
+  </html>
+  <!--矩形-->
   <canvas id="rectangle" width="200" height="100" style="border: 1px solid #000"></canvas>
   <script>
     var c = document.getElementById("rectangle");
@@ -12,6 +15,7 @@
     ctx.fillStyle = "#FF0000";
     ctx.fillRect = (0,0,50,75);
   </script>
+  <!--线条-->
   <canvas id="line" width="200" height="100" style="border: 1px solid #000"></canvas>
   <script>
     var c = document.getElementById('line');
@@ -20,6 +24,7 @@
     ctx.lineTo(200,100);
     ctx.stroke();
   </script>
+  <!--圆形-->
   <canvas id="round" width="200" height="100" style="border: 1px solid #000"></canvas>
   <script>
     var c = document.getElementById('round');
@@ -28,6 +33,7 @@
     ctx.arc(100,50,40,0,2*Math.PI);
     ctx.stroke();
   </script>
+  <!--实心文本-->
   <canvas id="solidText" width="200" height="100" style="border: solid 1px #000"></canvas>
   <script>
     var c = document.getElementById('solidText');
@@ -35,6 +41,7 @@
     ctx.font = '30px Arial';
     ctx.fillText('Hello World',10,50);
   </script>
+  <!--空心文本-->
   <canvas id="hollowText" width="200" height="100" style="border: solid 1px #000"></canvas>
   <script>
     var c = document.getElementById('hollowText');
@@ -42,6 +49,7 @@
     ctx.font = '30px Arial';
     ctx.strokeText('Hello World',10,50);
   </script>
+  <!--线形渐变-->
   <canvas id="line-gradient" width="200" height="100" style="border: solid 1px #000"></canvas>
   <script>
     var c = document.getElementById('line-gradient');
@@ -52,6 +60,7 @@
     ctx.fillStyle = grd;
     ctx.fillRect = (10,10,150,80);
   </script>
+  <!--圆形渐变-->
   <canvas id="radial-gradient" width="200" height="100" style="border: solid 1px #000"></canvas>
   <script>
     var c = document.getElementById('radial-gradient');
