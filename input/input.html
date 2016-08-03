@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>input类型</title>
+</head>
+<body>
+  <!--color-->
+  <form action="">
+    选择你喜欢的颜色：
+    <input type="color" name="favcolor"></input>
+    <input type="submit"></input>
+  </form>
+  <br>
+  <!--date-->
+  <form action="">
+    生日：
+    <input type="date" name=""></input>
+    <input type="submit"></input>
+  </form>
+  <br>
+  <!--datetime-->
+  <form action="">
+    生日和时间：
+    <input type="datetime" name="birthdaytime"></input>
+    <input type="submit"></input>
+  </form>
+  <br>
+  <!--datetime-local-->
+  <form action="">
+    <input type = datetime-local name=""></input>
+    <input type="submit"></input>
+  </form>
+  <br>
+  <!--email-->
+  <form action="">
+    E-mail:
+    <input type="email" name="useremail"></input>
+    <input type="submit"></input>
+  </form>
+  <br>
+  <!--monuth-->
+  <form action="">
+    生日（月和年）：
+    <input type="month" name=""></input>
+    <input type="submit"></input>
+  </form>
+  <br>
+  <!--number-->
+  <form action="">
+    数量（1到8之间）：
+    <input type="number" name="" min="1" max="8"></input>
+    <input type="submit"></input>
+  </form>
+  <br>
+  <!--range-->
+  <form action="">
+    Points:
+    <input type="range" name="" min="1" max="8"></input>
+    <input type="submit"></input>
+  </form>
+  <br>
+  <!--search-->
+  <form action="">
+    Search Google:
+    <input type="search" name=""></input>
+    <input type="submit"></input>
+  </form>
+  <br>
+  <!--tel-->
+  <form action="">
+    电话号码：
+    <input type="tel" name=""></input>
+    <input type="submit"></input>
+  </form>
+  <br>
+  <!--time-->
+  <form action="">
+    选择时间：
+    <input type="time" name=""></input>
+    <input type="submit"></input>
+  </form>
+  <br>
+  <!--url-->
+  <form action="">
+    添加你的主页：
+    <input type="url" name=""></input>
+    <input type="submit"></input>
+  </form>
+  <br>
+  <!--week-->
+  <form action="">
+    选择周：
+    <input type="week" name=""></input>
+    <input type="submit"></input>
+  </form>
+  <br>
+  <!--表单元素-->
+  <!--datalist元素-->
+  <form action="" method="get">
+    <input list="browsers" name=""></input>
+    <datalist id="browsers">
+      <option value="Internet Explorer"></option>
+      <option value="Firefox"></option>
+      <option value="Chrome"></option>
+      <option value="Opera"></option>
+      <option value="Safari"></option>
+    </datalist>
+    <input type="submit"></input>
+  </form>
+  <br>
+  <!--keygen-->
+  <form action="" method="get">
+    用户名：<input type="text" name=""></input>
+    加密：<keygen name="security"></keygen>
+    <input type="submit"></input>
+  </form>
+  <br>
+  <!--output元素-->
+  <form action="" method="get" oninput="x.value=parseInt(a.value)+parseInt(b.value)">0
+    <input type="range" id="a" value="50"></input>100+
+    <input type="number" id="b" value="50"></input>=
+    <output name="x" for="a b"></output>
+  </form>
+  <br>
+  <!--表单属性-->
+  <!--autocomplete规定 form 或 input 域应该拥有自动完成功能-->
+  <form action="" autocomplete="on">
+    First name:<input type="text" name="fname"></input><br>
+    Last name:<input type="text" name="lname"></input><br>
+    E-mail:<input type="email" name="email" autocomplete="off"></input><br>
+    <input type="submit"></input>
+  </form>
+  <br>
+  <!--novalidate一个boolean 属性,规定在提交表单时不应该验证 form 或 input 域-->
+  <form action=""novalidate>
+    E-mail:<input type="email" name="user_email"></input>
+    <input type="submit"></input>
+  </form>
+  <br>
+  <!--autofocus一个 boolean 属性,属性规定在页面加载时，域自动地获得焦点-->
+  <form action="">
+    First name:<input type="text" name="fname" autofocus></input><br>
+    Last name:<input type="text" name="lname"></input><br>
+    <input type="submit"></input>
+  </form>
+  <br>
+  <!--form属性规定输入域所属的一个或多个表单-->
+  <form action="" id="form1">
+    First name:<input type="text" name="fname"></input><br>
+    <input type="submit" value="submit"></input>
+  </form>
+  <p>"Last name"字段没有在form表单之内，到哪它也是form表单的一部分</p>
+  Last name:<input type="text" name="lname" form="form1"></input>
+  <br>
+  <!--formaction属性用于描述表单提交的URL地址，会覆盖<form>元素中的action属性,注意: The formaction 属性用于 type="submit" 和 type="image-->
+  <form action="">
+    First name:<input type="text" name="fname"></input><br>
+    Last name:<input type="text" name="lname"></input><br>
+    <input type="submit" value="submit"></input><br>
+    <input type="submit" formaction="" value="submit as admin"></input>
+  </form>
+  <br>
+  <!--formenctype属性描述了表单提交到服务器的数据编码 (只对form表单中 method="post" 表单),覆盖 form 元素的 enctype 属性,主要: 该属性与 type="submit" 和 type="image" 配合使用-->
+  <form action="" method="get">
+    First name:<input type="text" name="fname"></input><br>
+    <input type="submit" value="submit"></input>
+    <input type="submit" formenctype="" value="submit as multipart/form-data"></input>
+  </form>
+  <br>
+  <!--formmethod属性定义了表单的提交方式，覆盖了<form>元素的method属性，注意：该属性可以与type="submit"和type="image"配合使用-->
+  <form action="" method="get">
+    First name:<input type="text" name="fname"></input><br>
+    Last name:<input type="text" name="lname"></input><br>
+    <input type="submit" value="submit"></input>
+    <input type="submit" formmethod="post" formaction="" value="submit using POST"></input>
+  </form>
+  <br>
+  <!--formnaovalidate属性,描述了 <input> 元素在表单提交时无需被验证,会覆盖 <form> 元素的novalidate属性,注意: formnovalidate 属性与type="submit一起使用-->
+  <form action="">
+    E-mail:<input type="email" name=""></input><br>
+    <input type="submit" value="submit"></input><br>
+    <input type="submit" formnovalidate="formnovalidate" value="submit without validation"></input>
+  </form>
+  <br>
+  <!--formgarget属性指定一个名称或一个关键字来指明表单提交数据接收后的展示，覆盖 <form>元素的target属性，与type="submit" 和 type="image"配合使用-->
+  <form action="">
+    First name:<input type="text" name="fname"></input><br>
+    Last name:<input type="text" name="lname"></input><br>
+    <input type="submit" value="submit as normal"></input>
+    <input type="submit" formtarget="_blank" value="提交到一个新的页面"></input>
+  </form>
+  <br>
+  <!--height和width属性，用于image类型的<input>标签的图像高度和宽度-->
+  <form action="">
+    First name:<input type="text" name="fname"></input><br>
+    Last name:<input type="text" name="lname"></input><br>
+    <input type="image" src="./image/img_submit.gif" alt="submit" width="60" height="60"></input>
+  </form>
+  <br>
+  <!--list属性规定输入域的datalist,datalist是输入域的选项列表-->
+  <form action="" method="get">
+    <input list="browsers" name="browser"></input>
+    <datalist id="browsers">
+      <option value="Interner Explorer"></option>
+      <option value="Firefox">
+      <option value="Chrome">
+      <option value="Opera">
+      <option value="Safari">
+    </datalist>
+  </form>
+  <!--min、max和step属性用于为包含数字或日期的input类型规定限定。注意：min、max和step属性适用于以下类型的<input>标签：date pickers、number以及range。-->
+  <form action="">
+    输入1980-01-01之前的日期：
+    <input type="date" name="" max='1979-12-31'></input><br>
+    输入2000-01-01之后的日期：
+    <input type="date" min="2000-01-02"></input><br>
+    数量（在1和5之间）：
+    <input type="number" name="quantity" min='1' max="5"></input><br>
+    <input type="submit"></input>
+  </form>
+  <br>
+  <!--multiple属性,注意: multiple 属性适用于以下类型的 <input> 标签：email 和 file。: email, and file.-->
+  <form action="">
+    选择图片：<input type="file" name="img" multiple=""></input><br>
+    <input type="submit"></input>
+  </form>
+  <br>
+  <!--pattern属性，描述了一个正则表达式用于验证 <input> 元素的值，注意:pattern 属性适用于以下类型的 <input> 标签: text, search, url, tel, email, 和 password.-->
+  <form action="">
+    Country code:<input type="text" name="" pattern="" title=""></input>
+    <input type="submit"></input>
+  </form>
+  <br>
+  <!--placeholder属性提供提示值-->
+  <form action="">
+    <input type="text" name="fname" placeholder="First name"></input><br>
+    <input type="text" name="lname" placeholder="Last name"></input><br>
+    <input type="submit" value="submit"></input>
+  </form>
+  <br>
+  <!--required属性规定必须在提交之前填写输入域，注意:required 属性适用于以下类型的 <input> 标签：text, search, url, telephone, email, password, date pickers, number, checkbox, radio 以及 file-->
+  <form action="">
+    Username:<input type="text" name="username" required></input>
+    <input type="submit"></input>
+  </form>
+  <br>
+  <!--step属性为输入域规定合法的数字间隔.step 属性可以与 max 和 min 属性创建一个区域值,与以下type类型一起使用: number, range, date, datetime, datetime-local, month, time 和 week.-->
+  <form>
+    <input type="number" name="points" step="3"></input>
+    <input type="submit"></input>
+  </form>
+</body>
+</html>
