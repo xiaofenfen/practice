@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Web存储</title>
+  <script type="text/javascript">
+    function clickcCounter() {
+    	if (typeof(Storage)!=="undefined") {
+    		if (localStorage.clickcCounter) {
+    			localStorage.clickcCounter = Number(localStorage.clickcCounter) + 1;
+    		}
+    		else {
+    			localStorage.clickcCounter = 1;
+    		}
+    	document.getElementById("result-b").innerHTML = "You have click the button" + localStorage.clickcCounter + "time(s)";
+    	}
+    	else {
+    		document.getElementById("result-b").innerHTML = "SORRY";
+    	}
+    }
+  </script>
+</head>
+<body>
+  <div id="result-a"></div>
+  <p><button onclick="clickCounter()" type="button">Click me!</button></p>
+  <div id="result-b"></div>
+  <p>click the button to see</p>
+  <p>close the browser tab</p>
+  <script type="text/javascript">
+    if (typeof(Storage)!=="undefined") {
+      localStorage.lastname = "Smith";
+      document.getElementById("result-a").innerHTML = "lastname:" +localStorage.lastname;
+    }
+    else {
+    	document.getElementById("result-a").innerHTML = "SORRY"
+    }
+  </script>
+</body>
+</html>
