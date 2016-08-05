@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>函数定义</title>
+</head>
+<body>
+  <!--函数声明-->
+  <p id="demo-a"></p>
+  <p id="demo-b"></p>
+  <p id="demo-c"></p>
+  <p id="demo-d"></p>
+  <p id="demo-e"></p>
+  <p id="demo-f"></p>
+  <p id="demo-g"></p>
+  <p id="demo-h"></p>
+  <p id="demo-i"></p>
+  <p id="demo-j"></p>
+  <script type="text/javascript">
+    function first(a,b) {
+      return a * b;
+    }
+  document.getElementById("demo-a").innerHTML = first (4,3);
+  </script>
+  
+  <!--函数存在变量中-->
+  
+  <script type="text/javascript">
+    var x = function second(a,b) {
+      return a * b;
+    }
+    document.getElementById("demo-b").innerHTML = x;
+  </script>
+
+  <script type="text/javascript">
+    var x = function third(a,b) {
+    	return a * b;
+    }
+    document.getElementById("demo-c").innerHTML = x(6,8);
+  </script>
+  
+  <!--构造函数-->
+  <p id="demo-d"></p>
+  <script type="text/javascript">
+    var myFunction = new Function("a","b","return a * b");
+    document.getElementById("demo-d").innerHTML = myFunction(6,7);
+  </script>
+
+  <script type="text/javascript">
+    var myFunction = function(a,b) {
+      return a * b;
+    }
+    document.getElementById("demo-e").innerHTML = myFunction(2,8);
+  </script>
+
+  <!--自调用函数-->
+  <script type="text/javascript">
+    (function() {
+      document.getElementById("demo-f").innerHTML = "Hello";
+    })();
+  </script>
+  <!--函数可作为值使用-->
+  <!--作为值使用-->
+  <script type="text/javascript">
+    function myFunction(a,b) {
+    	return a * b;
+    }
+    var x = myFunction(3,4);
+    document.getElementById("demo-g").innerHTML = x;
+  </script>
+  <!--作为表达式用-->
+  <script type="text/javascript">
+    function myFunction(a,b) {
+    	return a * b;
+    }
+    var x = myFunction(3,4) * 2;
+    document.getElementById("demo-h").innerHTML = x;
+  </script>
+  <!--函数作为对象-->
+  <script type="text/javascript">
+    function myFunction(a,b) {
+    	return arguments.length;
+    }
+    document.getElementById("demo-i").innerHTML = myFunction(4,3);
+  </script>
+  <!--toString() 方法将函数作为一个字符串返回-->
+  <script type="text/javascript">
+    function myFunction(a,b) {
+    	return a * b;
+    }
+    document.getElementById("demo-j").innerHTML = myFunction.toString();
+  </script>
+
+</body>
+</html>
