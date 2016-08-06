@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>函数调用</title>
+</head>
+<body>
+  <p id="demo-a"></p>
+  <p id="demo-b"></p>
+  <p id="demo-c"></p>
+  <p id="demo-d"></p>
+  <p id="demo-e"></p>
+  <p id="demo-f"></p>
+  <script type="text/javascript">
+    function myFunction(a,b) {
+      return a * b;
+    }
+    document.getElementById("demo-a").innerHTML = myFunction(5,6);
+  </script>
+
+  <script type="text/javascript">
+    function myFunction(a,b) {
+      return a * b;
+    }
+    document.getElementById("demo-b").innerHTML = window.myFunction(4,8);
+  </script>
+  <!--全局对象-->
+  <script type="text/javascript">
+    function myFunction() {
+      return this;
+    }
+    document.getElementById("demo-c").innerHTML = myFunction();
+  </script>
+  <!--函数作为方法调用-->
+  <script type="text/javascript">
+    var myObject = {
+      firstName:"John",
+      lastName:"Doe",
+      fullName:function() {
+        return this.firstName + " " + this.lastName;
+      }
+    }
+    document.getElementById("demo-d").innerHTML = myObject.fullName();
+  </script>
+
+  <script type="text/javascript">
+    var myObject = {
+      firstName:"John",
+      lastName:"Doe",
+      fullName:function() {
+        return this;
+      }
+    }
+    document.getElementById("demo-e").innerHTML = myObject.fullName();
+  </script>
+  <!--使用构造函数调用函数-->
+  <script type="text/javascript">
+    function myFunction(a,b) {
+      this.firstName = a;
+      this.lastName = b;
+    }
+    var x = new myFunction("John","Doe");
+    document.getElementById("demo-f").innerHTML = x.firstName;
+  </script>
+</body>
+</html>
