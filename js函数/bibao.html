@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>闭包</title>
+</head>
+<body>
+  <button type="button" onclick="first()">one</button>
+  <p id="demo-a"></p>
+  <script type="text/javascript">
+    function first() {
+      var a = 2;
+      document.getElementById("demo-a").innerHTML = a * a;
+    }
+  </script>
+  
+  <button type="button" onclick="second()">two</button>
+  <p id="demo-b"></p>
+  <script type="text/javascript">
+    var a = 4;
+    function second() {
+      document.getElementById("demo-b").innerHTML = a * a;
+    }
+  </script>
+
+  <!--计数器-->
+  <button type="button" onclick="third()">全局变量计数</button>
+  <p id="demo-c"></p>
+  <script type="text/javascript">
+    var counter = 0;
+    function add() {
+      return counter +=1;
+    }
+    function third() {
+      document.getElementById("demo-c").innerHTML = add();
+    }
+  </script>
+
+  <button type="button" onclick="fourth()">局部变量计数</button>
+  <p id="demo-d">0</p>
+  <script type="text/javascript">
+    function add() {
+    	var counter = 0;
+    	return counter += 1;
+    }
+    function fourth() {
+      document.getElementById("demo-d").innerHTML = add();
+    }
+  </script>
+
+  <!--内嵌函数-->
+  <p id="demo-e">0</p>
+  <script type="text/javascript">
+    document.getElementById("demo-e").innerHTML = add();
+    function add() {
+      var counter = 0;
+      function plus() {
+        counter += 1;
+      }
+      plus();
+      return counter;
+    }
+  </script>
+
+  <!--闭包-->
+  <button type="button" onclick="six()">计数</button>
+  <p id="demo-f">0</p>
+  <script type="text/javascript">
+    var add = (function() {
+    	var counter = 0;
+    	return function () {
+    		return counter +=1;
+    	}
+    })();
+    function six() {
+    	document.getElementById("demo-f").innerHTML = add();
+    }
+  </script>
+</body>
+</html>
