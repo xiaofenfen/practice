@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTNL DOM</title>
+</head>
+<body>
+  <!--通过id查找-->
+  <p id="demo-a">hello</p>
+  <script type="text/javascript">
+    x = document.getElementById("demo-a");
+    document.write("输出" + x.innerHTML);
+  </script>
+  <!--通过表签名查找-->
+  <p>hello</p>
+  <div id="demo-b">
+    <p>北京</p>
+    <p>湖北</p>
+  </div>
+  <script type="text/javascript">
+    var x = document.getElementById("demo-b");
+    var y = document.getElementsByTagName('p');
+    document.write("等于：" + y[0].innerHTML);
+  </script>
+  <!--通过类名查找-->
+  <p class="in">你好</p>
+  <script type="text/javascript">
+    x = document.getElementsByClassName("in");
+    document.write("本文为：" + x[0].innerHTML)
+  </script>
+</body>
+</html>
