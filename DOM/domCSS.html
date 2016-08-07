@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM CSS</title>
+</head>
+<body>
+  <!--改变样式-->
+  <p id="p1">Hello World</p>
+  <p id="p2">Hello World</p>
+  <script type="text/javascript">
+    document.getElementById("p2").style.color = "blue";
+    document.getElementById("p2").style.fontFamily = "Arial";
+    document.getElementById("p2").style.fontSize = "larger";
+  </script>
+  <!--使用事件-->
+  <h1 id="a">我的标题</h1>
+  <button type="button" onclick="document.getElementById('a').style.color = 'red'">点击</button>
+  <!--显示与隐藏文本-->
+  <p id="b">这是一个文本</p>
+  <input type="button" value="隐藏文本" onclick="document.getElementById('b').style.visibility = 'hidden'"></input>
+  <input type="button" value="显示文本" onclick="document.getElementById('b').style.visibility = 'visible'"></input>
+</body>
+</html>
