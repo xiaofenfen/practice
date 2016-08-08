@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM EventListener</title>
+</head>
+<body>
+  <!--触发监听事件-->
+  <button id="myBtn">点我</button>
+  <p id="demo"></p>
+  <script type="text/javascript">
+    document.getElementById("myBtn").addEventListener("click",displayDate);
+    function displayDate() {
+      document.getElementById("demo").innerHTML = Date();
+    }
+  </script>
+</body>
+</html>
